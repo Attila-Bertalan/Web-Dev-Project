@@ -1,3 +1,7 @@
+p{
+	font-family: Roboto, Arial;
+}
+
 body{
 	background-image: url("Images/plane.jpg");
 	background-repeat: no-repeat;
