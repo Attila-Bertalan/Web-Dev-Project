@@ -20,6 +20,7 @@ body{
 }
 
 nav{
+    background-color: #00986f;
     display: flex;
     align-items: center;
     padding: 20px 8%;
@@ -53,12 +54,14 @@ nav ul li a {
 
 .pic-container{
     position: absolute;
-    top: 45%;
-    left: 15%;
-    width: 200px;
+    top: 5%;
+    left: 2%;
+    width: 12%;
 }
 .main-photo{
-    width: 100;
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 
 .text-container{
@@ -85,4 +88,95 @@ nav ul li a {
     border-radius: 30px;
 
 
+}
+
+.card-container1{
+    text-align: center;
+
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    
+    transition: 0.3s;
+    display: inline-block;
+    flex-direction: column;
+    padding-top: 75px;
+    text-align: center;
+    
+    
+
+  }
+
+
+  
+
+  
+  /* Add some padding inside the card container */
+.container {
+    padding: 10px 26px;
+    flex: 1;
+
+}
+
+
+.card-student {
+    /* Add shadows to create the "card" effect */
+    width: 50%;
+    height: 50%;
+    transition: 0.3s;
+    display: inline-block;
+    flex-direction: column;
+    padding: 75px;
+    text-align: center;
+
+
+}
+.card-student:hover{
+    box-shadow: 2px 2px;
+}
+
+.container-student {
+    padding: 10px 26px;
+    flex: 1;
+
+}
+
+.student-review-text{
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+
+
+.meet-team{
+
+    text-align: center;
+    font-size: 80px;
+    font-weight: 200;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.why-ace-div{
+    text-align: center;
+}
+
+
+.why-ace{
+    color: #00986f;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 200;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.why-ace-text{
+
+    
+    text-align: center;
+    padding-top: 50px;
+    font-size: 25px;
 }
