@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACE TRAINING </title>
     <link rel = "stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -19,9 +18,6 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
-                </li>
-                <li>
                     <a href="register.html">Register</a>
                 </li>
                 <li>
@@ -30,15 +26,26 @@
             </ul>
         </nav>
 
-        <div class = "pic-container">
-            <img src="images/processor.png" class ="MainPhoto" width="100" height="100">
+        <div class = "block">
+            <form action="/action_page.php">
+
+                Email:<input type="text" id="email" placeholder="example@email.com">
+                Password:<input type="password" id="password" placeholder="Password">
+                <input type="checkbox" onClick="showPassword()"/>Show password
+                <input type="submit" value="Submit">
+            </form>
         </div>
-
-
-
-
-    </div>
-    
+    </div>   
+    <script>
+        function showPassword() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 
-</html>l
+</html>
