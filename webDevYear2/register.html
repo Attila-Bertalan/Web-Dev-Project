@@ -34,28 +34,28 @@
     <form id="form" action="/" method="get">
         <div>
             <div class="input-control">
-            <label for="First">First Name</label>
+            <label for="First">First Name:</label>
             <input id="First" name="First" type="text">
             </div>
         </div>
 
         <div>
             <div class="input-control">
-            <label for="Last">Last Name</label>
+            <label for="Last">Last Name:</label>
             <input id="Last" name="Last" type="text">
             </div>
         </div>
 
         <div>
             <div class="input-control">
-            <label for="Password">Password</label>
+            <label for="Password">Password:</label>
             <input id="Password" name="Password" type="password">
             </div>
         </div>
 
         <div>
             <div class="input-control">
-            <label for="Gender">Gender</label>
+            <label for="Gender">Gender:</label>
             <input type="radio" id="Gender">Male
             <input type="radio" id="Gender">Female
             </div>
@@ -63,26 +63,28 @@
 
         <div>
             <div class="input-control">
-            <label for="Email">Email</label>
-            <input id="Email" name="Email" type="email">
+            <label for="Email">Email:</label>
+            <input id="Email" name="Email" type="email" placeholder="example@email.com">
             </div>
         </div>
 
         <div>
             <div class="input-control">
-            <label for="Phone">Phone Number</label>
-            <select>
+            <label for="Phone">Phone Number:</label>
+            <div class="phoneNumberInput">
+                <select>
                 <option>+44</option>
                 <option>+971</option>
                 <option>+40</option>
                 <option>+35</option>
-            </select>
+                </select>
 
-            <input id="Phone" name="Phone" type="tel">
-            </div>
+                <input id="Phone" name="Phone" type="tel">
+                </div>
+             </div>
         </div>
 
-        <button type="submit">submit</button>
+        <button class="submitButton" type="submit">submit</button>
 
     </form>
     

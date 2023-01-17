@@ -179,7 +179,7 @@ nav ul li a {
     font-size: 25px;
 }
 
-.block {
+.loginContainer, #form {
     border-radius: 25px;
     background: #00986f;
     padding: 20px; 
@@ -187,6 +187,10 @@ nav ul li a {
     width: 50%;
     top: 100px;
     position: relative;
+  }
+
+  #form {
+    color: white;
   }
   
   input[type=text], select {
@@ -209,7 +213,7 @@ nav ul li a {
     box-sizing: border-box;
   }
   
-  input[type=submit] {
+  input[type=submit], .submitButton {
     width: 100%;
     background-color: #4CAF50;
     color: white;
