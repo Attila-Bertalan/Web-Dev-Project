@@ -1,10 +1,10 @@
 const form = document.getElementById('form');
-const First = document.getElemendByID('First');
+const First = document.getElementByID('First');
 const Last = document.getElementById('Last');
 const Password = document.getElementById('Password');
 const Gender = document.getElementById('Gender');
-const Email = docment.getElemendByID('Email');
-const Phone = document.getElemendById('Phone');
+const Email = document.getElementByID('Email');
+const Phone = document.getElementById('Phone');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -84,7 +84,7 @@ const validateInputs = () => {
     }
 
     if(PhoneValue === ''){
-        setError(Phone, "Please enter your Phone Numnber");
+        setError(Phone, "Please enter your Phone Number");
     }
     else if(isValidPhoneNumber(PhoneValue)){
         setError(Phone, "Please enter a valid Phone number");
