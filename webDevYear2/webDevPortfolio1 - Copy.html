@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio 1 WebDev</title>
+    <link rel="stylesheet" href="webDevPortfolio1.css">
+    <script type="text/javascript" src="webDevPortfolio1.js"></script>
+  </head>
+  <body onload="limitDOB()">
+    <div>
+      <form name="frmRegister" action = "doNothing.html" onsubmit = "return validateForm()" method="post">
+        <table class="center">
+          <tr>
+            <td colspan="2" class="title0">
+              <h1>Website Development Portfolio 1</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>Forename <span class="asterisk">*</span> :</td>
+            <td><input type="textbox" name="frmForename" id="frmForename"></td>
+          </tr>
+          <tr>
+            <td>Middle Name(s) :</td>
+            <td><input type="textbox" name="frmMiddleName" id="frmMiddleName"></td>
+          </tr>
+          <tr>
+            <td>Surname <span class="asterisk">*</span> :</td>
+            <td><input type="textbox" name="frmSurname" id="frmSurname"></td>
+          </tr>
+          <tr>
+            <td name="frmGender" id="frmGender">Gender <span class="asterisk">*</span> :</td>
+            <td>
+              <input type="radio" name="Gender" id="frmGender"> Male
+              <input type="radio" name="Gender" id="frmGender"> Female
+              <input type="radio" name="Gender" id="frmGender"> Other
+            </td>
+          </tr>
+          <tr>
+            <td >Date of Birth <span class="asterisk">*</span> : </td>
+            <td><input type="date" name="frmDateOfBirth" id="frmDateOfBirth"></td>
+          </tr>
+          <tr>
+            <td>Age <span class="asterisk">*</span> :</td>
+            <td>
+              <input type="textbox" size="2" name="frmAge" id="frmAge" readonly="true">
+              <input class="button" type="button" value="Set Age" id="setAgeButton" onclick="setAge()">
+            </td>
+          </tr>
+          <tr>
+            <td>Course <span class="asterisk">*</span> :</td>
+            <td>
+              <select name="frmCourse" id="frmCourse">
+                <option disabled selected value=>-- Select an option --</option>
+                <option value="1">Databases</option>
+                <option value="2">Websites</option>
+                <option value="3">Networks</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td >Date of Registration :</td>
+            <td>
+              <input type="textbox" name="frmDateReg" id="frmDateReg" readonly="true">
+              <input type="button" name="setDateButton" id="setDateButton" class="button" value="Set current date" onclick="setDate();">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"> 
+              <input class="button" type="button" value="Back" onclick="confirmAction()">
+              <input class="button" type="reset" value="Clear Form" onclick="confirmAction()">
+              <input class="button" type="submit" value="Submit">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
