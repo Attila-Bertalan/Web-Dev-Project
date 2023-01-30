@@ -73,6 +73,13 @@ const validateInputs = () => {
         setSuccess(Password);
     }
     
+    if(GenderValue === ''){
+        setError(Gender, "Please select Gender")
+    }
+    else{
+        setSucces(Gender)
+    }
+    
     if(EmailValue === ''){
         setError(Email, "Please enter Email");
     }
