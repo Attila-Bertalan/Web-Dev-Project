@@ -229,3 +229,22 @@ nav ul li a {
   input[type=submit]:hover {
     background-color: #45a049;
   }
+ .column {
+    float: left;
+    width: 25%;
+    padding: 40px;
+   
+  }
+  
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+}
