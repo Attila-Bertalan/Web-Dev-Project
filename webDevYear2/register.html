@@ -10,79 +10,62 @@
 </head>
 
 <body>
+
+
+
+
+
     <div class = "hero">
         <nav>
             <img src="images/menu.png" class ="menu-img" width="50" height="50">
             <img src="images/logo.png" class ="logo" width="50" height="50">
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="login.php">Login</a>
                 </li>
                 <li>
-                    <a href="register.html">Register</a>
+                    <a href="register.php">Register</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <form id="form" action="/" method="get">
+    <form id="form" action="registration.php" method="POST">
         <div>
             <div class="input-control">
             <label for="First">First Name:</label>
-            <input id="First" name="First" type="text">
+            <input id="First" name="firstname" type="text">
             </div>
         </div>
 
         <div>
             <div class="input-control">
             <label for="Last">Last Name:</label>
-            <input id="Last" name="Last" type="text">
+            <input id="Last" name="lastname" type="text">
             </div>
         </div>
 
         <div>
             <div class="input-control">
             <label for="Password">Password:</label>
-            <input id="Password" name="Password" type="password">
+            <input id="Password" name="password" type="password">
             </div>
         </div>
 
-        <div>
-            <div class="input-control">
-            <label for="Gender">Gender:</label>
-            <input type="radio" id="Gender">Male
-            <input type="radio" id="Gender">Female
-            </div>
-        </div>
 
         <div>
             <div class="input-control">
             <label for="Email">Email:</label>
-            <input id="Email" name="Email" type="email" placeholder="example@email.com">
+            <input id="Email" name="email" type="email" placeholder="example@email.com">
             </div>
         </div>
 
-        <div>
-            <div class="input-control">
-            <label for="Phone">Phone Number:</label>
-            <div class="phoneNumberInput">
-                <select>
-                <option>+44</option>
-                <option>+971</option>
-                <option>+40</option>
-                <option>+35</option>
-                </select>
-
-                <input id="Phone" name="Phone" type="tel">
-                </div>
-             </div>
-        </div>
 
         <button class="submitButton" type="submit">submit</button>
 
