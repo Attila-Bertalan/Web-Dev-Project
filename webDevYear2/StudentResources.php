@@ -53,7 +53,15 @@ include "FilesManaging.php";
 
 
         </div>
+    
+         <form action="FilesManaging.php" method="post" enctype="multipart/form-data" >
+          <h3>Upload File</h3>
+          <input type="file" name="myfile"> <br>
+          <button type="submit" name="save">upload</button>
 
+        
+        
+        
         <div>
         <table>
             <thead>
