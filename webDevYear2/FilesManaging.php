@@ -21,15 +21,17 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     // the physical file on a temporary uploads directory on the server
     $file = $_FILES['myfile']['tmp_name'];
     $size = $_FILES['myfile']['size'];
+    
 
-    if (!in_array($extension, ['zip', 'pdf', 'docx'])) {
-        echo "You file extension must be .zip, .pdf or .docx";
+    if (!in_array($extension, ['pptx', 'pdf', 'docx'])) {
+        echo "You file extension must be .pptx, .pdf or .docx";
     } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
         echo "File too large!";
     } else {
         // move the uploaded (temporary) file to the specified destination
         if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO resources (name, size,) VALUES ('$filename', $size)";
+            $sql = "INSERT INTO resources (name, size) VALUES ('$filename', $size)";
+            echo $sql;
             if (mysqli_query($conn, $sql)) {
                 echo "File uploaded successfully";
             }
@@ -39,11 +41,11 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     }
 }
 
-if (isset($_GET['file_id'])) {
-    $id = $_GET['file_id'];
+if (isset($_GET['ID'])) {
+    $id = $_GET['ID'];
 
     // fetch file to download from database
-    $sql = "SELECT * FROM resources WHERE id=$id";
+    $sql = "SELECT * FROM resources WHERE ID=$id";
     $result = mysqli_query($conn, $sql);
 
     $file = mysqli_fetch_assoc($result);
