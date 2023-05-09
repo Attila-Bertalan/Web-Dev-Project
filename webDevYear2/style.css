@@ -248,3 +248,269 @@ nav ul li a {
       width: 100%;
     }
 }
+
+nav ul li p {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 50px;
+    opacity: 0.8;
+ }
+
+ input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #4CAF50;
+  }
+
+  .button {
+    width:47.5%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 1% 1%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 10%;}
+
+  .news {
+    background-color: #00986f;
+    width: 30%;
+    height: 300px;
+    border: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    position: sticky;
+    left:35%
+   }
+
+   .forward {
+    background-color: #1d2026;
+    border:none;
+    opacity: 0.8;
+   }
+
+   .backward {
+    background-color: #1d2026;
+    border:none;
+    opacity: 0.8;
+   }
+
+  p {
+    text-align: center;
+  }
+
+  img.a {
+    vertical-align: sub;
+    margin-left: 10px;
+  }
+
+  img.c {
+    vertical-align: baseline;
+  }
+
+  .close {
+    background-color: #00986f;
+    border: none;
+    opacity: 0.8;
+
+  }
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #00986f;
+  color: white;
+  padding: 16px 16px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  border-radius: 200px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  color: white;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  max-width: 36%;
+  padding: 10px;
+  background-color: #00986f;
+  border-radius: 10px;
+}
+
+.form-container .notif {
+  width: 97%;
+  height: 80px;
+  margin: 5px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  border-radius: 10px;
+}
+
+.form-container .notif .btn {
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.form-container .close {
+  position: fixed;
+  right: 35px;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .close:hover, .forward:hover, .backward:hover, nav ul li p{
+  opacity: 1;
+}
+
+.form-container .notif img {
+    float: left;
+    max-width: 40px;
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.class-container {
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  max-width: 36%;
+  height: 100%;
+  padding: 10px;
+  background-color: #00986f;
+  border-radius: 10px;
+  border-color:#4CAF50;
+  overflow: scroll;
+}
+
+.class-container .btn {
+  width: 97%;
+  height: 80px;
+  margin: 15px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  border-radius: 10px;
+}
+
+.class-container .btn img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.class-container .close {
+  position: fixed;
+  left: 240px;
+}
+
+.student_list {
+  color: white;
+  position: fixed;
+  bottom: 5%;
+  right: 52%;
+  width: 345px;
+  height: 530px;
+  padding: 10px;
+  background-color: #00986f;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.send_files {
+  color: white;
+  position: fixed;
+  bottom: 45%;
+  left: 52%;
+  width: 345px;
+  height: 158px;
+  padding: 10px;
+  background-color: #00986f;
+  border-radius: 10px;
+}
+
+.set_quiz {
+  color: white;
+  position: fixed;
+  bottom: 5%;
+  left: 52%;
+  width: 345px;
+  height: 344px;
+  padding: 10px;
+  background-color: #00986f;
+  border-radius: 10px;
+}
+
+.student {
+  width: 97%;
+  height: 80px;
+  margin: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.student p {
+  padding: 17px;
+}
+
+.student img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
