@@ -79,7 +79,7 @@
             <?php
             for ($i = 0; $i<$class_length; $i++) {
                 echo "
-                    <a href='Class_Profile.php?class=$classes[$i]'>
+                    <a href='Class_Profile.php?class=$classes[$i]&name=$name'>
                         <button type='button' class='btn'>
                             <img src='images/profileIcon.png' alt='Avatar' style='width:100%'>
                             <p>$classes[$i]</p>
