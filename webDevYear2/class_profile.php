@@ -19,14 +19,14 @@
         $class_length=count($classes);
         $sql="SELECT course_ID FROM courses WHERE course_name='$class'";
         $classId=mysqli_query($conn,$sql);
-        $sql="SELECT user_id FROM enrollment WHERE course_ID='$classId'";
+        $sql="SELECT user_ID FROM enrollment WHERE course_ID='$classId'";
         $id=mysqli_query($conn,$sql);
         $idLength=count($id);
         $students=array();
         for ($i=0;$i<$idLength;$i++) {
-            $sql="SELECT firstname FROM users WHERE user_id='$id[$i]'";
+            $sql="SELECT firstname FROM users WHERE user_ID='$id[$i]'";
             $studentFirstname=mysqli_query($conn,$sql);
-            $sql="SELECT lastname FROM users WHERE user_id='$id[$i]'";
+            $sql="SELECT lastname FROM users WHERE user_ID='$id[$i]'";
             $studentLastname=mysqli_query($conn,$sql);
             array_push($students,$studentFirstname." ".$studentLastname);
         }
