@@ -14,17 +14,21 @@
         $class=$_GET['class'];
         $name=$_GET['name'];
         $conn = mysqli_connect("localhost", "root", "root", "acetraining");
-        $sql="SELECT name FROM classes";//not sure this right but not sure where classes are being stored database wise
+        $sql="SELECT course_name FROM courses";
         $classes=mysqli_query($conn,$sql);
         $class_length=count($classes);
-        $sql="SELECT firstname FROM users WHERE class='$class'";//again not sure this is right but you get the general gist
-        $studentFirstnames=mysqli_query($conn,$sql);
-        $sql="SELECT lastname FROM users WHERE class='$class'";
-        $studentLastnames=mysqli_query($conn,$sql);
-        $students_length=count($studentFirstnames);
+        $sql="SELECT course_ID FROM courses WHERE course_name='$class'";
+        $classId=mysqli_query($conn,$sql);
+        $sql="SELECT user_id FROM enrollment WHERE course_ID='$classId'";
+        $id=mysqli_query($conn,$sql);
+        $idLength=count($id);
         $students=array();
-        for ($i=0;$i<$students_length;$i++) {
-            array_push($students,$studentFirstnames[$i]." ".$studentLastnames[$i]);
+        for ($i=0;$i<$idLength;$i++) {
+            $sql="SELECT firstname FROM users WHERE user_id='$id[$i]'";
+            $studentFirstname=mysqli_query($conn,$sql);
+            $sql="SELECT lastname FROM users WHERE user_id='$id[$i]'";
+            $studentLastname=mysqli_query($conn,$sql);
+            array_push($students,$studentFirstname." ".$studentLastname);
         }
     ?>
     <div class = "hero">
