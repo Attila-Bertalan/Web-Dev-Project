@@ -11,17 +11,20 @@
 <body>
     <?php
         $conn = mysqli_connect("localhost", "root", "root", "acetraining");
-        $name="Mr.Boulton";//this is where the connection to the login page needs to go
-        $sql="SELECT name FROM classes";//not sure this right but not sure where classes are being stored database wise
+        $name="Mr.Boulton";
+        $sql="SELECT course_name FROM courses";
         $classes=mysqli_query($conn,$sql);
-        $classes=['AI','Robotics','SENG','COMPSCI'];
         $class_length=count($classes);
-        $sql="SELECT firstname FROM users WHERE authorised = '0'";
-        $sql="SELECT lastname FROM users WHERE authorised = '0'";
-        $students_length=count($studentFirstnames);
+        $sql="SELECT user_ID FROM enrollments WHERE status='pending'";
+        $id=mysqli_query($conn,$sql);
+        $idLength=count($id)
         $students=array();
-        for ($i=0;$i<$students_length;$i++) {
-            array_push($students,$studentFirstnames[$i]." ".$studentLastnames[$i]);
+        for ($i=0;$i<$idLength;$i++) {
+            $sql="SELECT firstname FROM users WHERE user_ID = '$id'";
+            $studentFirstname=mysqli_query($conn,$sql);
+            $sql="SELECT lastname FROM users WHERE user_ID = '$id'";
+            $studentLastname=mysqli_query($conn,$sql);
+            array_push($students,$studentFirstname." ".$studentLastname);
         }
     ?>
     <div class = "hero">
@@ -113,7 +116,7 @@
 
         function accept(num) {
             <?php
-                $sql="UPDATE users SET authorised = '1' WHERE firstname = $studentFirstnames[$i]"; 
+                $sql="UPDATE enrollments SET authorised = 'authorised' WHERE user_ID = $id[$i]"; 
                 mysqli_query($conn,$sql)
             ?>
             document.getElementById(num).style.display = "none";
@@ -122,7 +125,7 @@
 
         function reject(num) {
             <?php
-                $sql="UPDATE users SET authorised = '0' WHERE firstname = $studentFirstnames[$i]"; 
+                $sql="UPDATE enrollments SET authorised = 'rejected' WHERE user_ID='id[$i]']"; 
                 mysqli_query($conn,$sql)
             ?>
             document.getElementById(num).style.display = "none";
