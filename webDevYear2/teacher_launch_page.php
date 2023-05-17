@@ -11,18 +11,29 @@
 <body>
     <?php
         $conn = mysqli_connect("localhost", "root", "root", "acetraining");
-        $name="Mr.Boulton";
+    
+        session_start();
+        $_SESSION['loginFirstname'];
+        $_SESSION["loginLastname"];
+
+        $firstname = $_SESSION['loginFirstname']; 
+        $lastname = $_SESSION["loginLastname"] ;
+    
+        $name=$firstname." ".$lastname;
         $sql="SELECT course_name FROM courses";
         $classes=mysqli_query($conn,$sql);
         $class_length=count($classes);
-        $sql="SELECT user_ID FROM enrollments WHERE status='pending'";
-        $id=mysqli_query($conn,$sql);
+        $sql="SELECT ID FROM enrollments WHERE authorised='0'";
+        $result=mysqli_query($conn,$sql);
+        while ($ids = mysqli_fetch_assoc($result)) {
+            $id[]=$ids
+        }
         $idLength=count($id)
         $students=array();
         for ($i=0;$i<$idLength;$i++) {
-            $sql="SELECT firstname FROM users WHERE user_ID = '$id'";
+            $sql="SELECT firstname FROM users WHERE ID = '$id'";
             $studentFirstname=mysqli_query($conn,$sql);
-            $sql="SELECT lastname FROM users WHERE user_ID = '$id'";
+            $sql="SELECT lastname FROM users WHERE ID = '$id'";
             $studentLastname=mysqli_query($conn,$sql);
             array_push($students,$studentFirstname." ".$studentLastname);
         }
@@ -116,7 +127,7 @@
 
         function accept(num) {
             <?php
-                $sql="UPDATE enrollments SET authorised = 'authorised' WHERE user_ID = $id[$i]"; 
+                $sql="UPDATE users SET authorised = '1' WHERE ID = $id[$i]"; 
                 mysqli_query($conn,$sql)
             ?>
             document.getElementById(num).style.display = "none";
@@ -125,7 +136,7 @@
 
         function reject(num) {
             <?php
-                $sql="UPDATE enrollments SET authorised = 'rejected' WHERE user_ID='id[$i]']"; 
+                $sql="UPDATE users SET authorised = '0' WHERE ID='$id[$i]']"; 
                 mysqli_query($conn,$sql)
             ?>
             document.getElementById(num).style.display = "none";
