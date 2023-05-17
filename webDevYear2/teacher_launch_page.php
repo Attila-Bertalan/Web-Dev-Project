@@ -23,12 +23,12 @@
         $sql="SELECT course_name FROM courses";
         $classed=mysqli_query($conn,$sql);
         while ($temp = mysqli_fetch_assoc($classed)) {
-            $classes[]=$temp
+            $classes[]=$temp;
         $class_length=count($classes);
         $sql="SELECT ID FROM enrollments WHERE authorised='0'";
         $result=mysqli_query($conn,$sql);
         while ($ids = mysqli_fetch_assoc($result)) {
-            $id[]=$ids
+            $id[]=$ids;
         }
         $idLength=count($id)
         $students=array();
