@@ -59,6 +59,26 @@
             echo "<h1>$class</h1>"
         ?>
     </div>
+    <button class="open-button" onclick="openForm()"><img class="b" src="images/NotificationBell.png" width="50" height="50"></button>
+
+    <div class="chat-popup" id="notifications">
+    <form  class="form-container">
+            <h3>Notifications:<button type="button" class="close" onclick="closeForm()"><img class="c" src="images/Grey_close_x.svg.png" width="10" height="10"></button></h3>
+        
+            <?php
+                for ($i = 0; $i<$idLength; $i++) {
+                    echo "
+                        <div class='notif' id='$i'>
+                            <img class='profile' src='images/profileIcon.png' alt='Avatar' style='width:100%'>
+                            <button class='btn' onclick='accept($i)'><img src='images/tick.png'></button>
+                            <button class='btn' onclick='reject($i)'><img src='images/cross.png'></button>
+                            <p>$students[$i]</p>
+                        </div>";
+                }
+            ?>
+    </form>
+    </div>
+
     <div class="student_list">
         <?php
         for ($i = 0; $i<$students_length; $i++) {
