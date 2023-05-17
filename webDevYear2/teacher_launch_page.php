@@ -21,7 +21,9 @@
     
         $name=$firstname." ".$lastname;
         $sql="SELECT course_name FROM courses";
-        $classes=mysqli_query($conn,$sql);
+        $classed=mysqli_query($conn,$sql);
+        while ($temp = mysqli_fetch_assoc($classed)) {
+            $classes[]=$temp
         $class_length=count($classes);
         $sql="SELECT ID FROM enrollments WHERE authorised='0'";
         $result=mysqli_query($conn,$sql);
@@ -74,7 +76,7 @@
             <h3>Notifications:<button type="button" class="close" onclick="closeForm()"><img class="c" src="images/Grey_close_x.svg.png" width="10" height="10"></button></h3>
         
             <?php
-                for ($i = 0; $i<$students_length; $i++) {
+                for ($i = 0; $i<$idLength; $i++) {
                     echo "
                         <div class='notif' id='$i'>
                             <img class='profile' src='images/profileIcon.png' alt='Avatar' style='width:100%'>
