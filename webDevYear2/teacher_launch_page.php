@@ -22,14 +22,16 @@
         $name=$firstname." ".$lastname;
         $sql="SELECT course_name FROM courses";
         $classed=mysqli_query($conn,$sql);
+        $classes=array();
         while ($temp = mysqli_fetch_assoc($classed)) {
-            $classes[]=$temp;
+            array_push($classes,$temp)
         }
         $class_length=count($classes);
         $sql="SELECT ID FROM enrollments WHERE authorised='0'";
         $result=mysqli_query($conn,$sql);
+        $id=array();
         while ($ids = mysqli_fetch_assoc($result)) {
-            $id[]=$ids;
+            array_push($id,$ids);
         }
         $idLength=count($id)
         $students=array();
@@ -38,7 +40,10 @@
             $studentFirstname=mysqli_query($conn,$sql);
             $sql="SELECT lastname FROM users WHERE ID = '$id'";
             $studentLastname=mysqli_query($conn,$sql);
-            array_push($students,$studentFirstname." ".$studentLastname);
+            $studentFirstnameResult=mysqli_fetch_assoc($studentFirstname);
+            $studentLastnameResult=mysqli_fetch_assoc($studentLastname);
+            $studentFullname=$studentFirstnameResult('firstname')." ".$studentLastnameResult('lastname');
+            array_push($students,$studentFullname);
         }
     ?>
     <div class = "hero">
