@@ -16,16 +16,18 @@
         $conn = mysqli_connect("localhost", "root", "root", "acetraining");
         $sql="SELECT course_name FROM courses";
         $classed=mysqli_query($conn,$sql);
+        $classes=array();
         while ($temp = mysqli_fetch_assoc($classed)) {
-            $classes[]=$temp;
+            array_push($classes,$temp);
         }
         $class_length=count($classes);
         $sql="SELECT course_ID FROM courses WHERE course_name='$class'";
         $classId=mysqli_query($conn,$sql);
         $sql="SELECT user_ID FROM enrollment WHERE course_ID='$classId'";
         $result=mysqli_query($conn,$sql);
+        $id=array();
         while ($ids = mysqli_fetch_assoc($result)) {
-            $id[]=$ids;
+            array_push($id,$ids);
         }
         $idLength=count($id);
         $students=array();
@@ -34,13 +36,17 @@
             $studentFirstname=mysqli_query($conn,$sql);
             $sql="SELECT lastname FROM users WHERE ID='$id[$i]'";
             $studentLastname=mysqli_query($conn,$sql);
-            array_push($students,$studentFirstname." ".$studentLastname);
+            $studentFirstnameResult=mysqli_fetch_assoc($studentFirstname);
+            $studentLastnameResult=mysqli_fetch_assoc($studentLastname);
+            $studentFullname=$studentFirstnameResult('firstname')." ".$studentLastnameResult('lastname');
+            array_push($students,$studentFullname);
         }
     
         $sql="SELECT user_ID FROM enrollment WHERE course_ID='$classId' AND status='pending'";
         $result=mysqli_query($conn,$sql);
+        $enrollmentId=array();
         while ($ids = mysqli_fetch_assoc($result)) {
-            $enrollmetnId[]=$ids;
+            array_push($enrollmetnId,$ids);
         }
         $enrollmetIdLength=count($id);
         $enrollmentStudents=array();
@@ -49,7 +55,10 @@
             $studentFirstname=mysqli_query($conn,$sql);
             $sql="SELECT lastname FROM users WHERE ID='$enrollmetnId[$i]'";
             $studentLastname=mysqli_query($conn,$sql);
-            array_push($enrollmentStudents,$studentFirstname." ".$studentLastname);
+            $studentFirstnameResult=mysqli_fetch_assoc($studentFirstname);
+            $studentLastnameResult=mysqli_fetch_assoc($studentLastname);
+            $studentFullname=$studentFirstnameResult('firstname')." ".$studentLastnameResult('lastname');
+            array_push($enrollmentStudents,$studentFullname);
         }
     ?>
     <div class = "hero">
