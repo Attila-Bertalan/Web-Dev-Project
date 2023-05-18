@@ -24,14 +24,14 @@
         $classed=mysqli_query($conn,$sql);
         $classes=array();
         while ($temp = mysqli_fetch_assoc($classed)) {
-            array_push($classes,$temp)
+            array_push($classes,$temp['course_name'])
         }
         $class_length=count($classes);
-        $sql="SELECT ID FROM enrollments WHERE authorised='0'";
+        $sql="SELECT ID FROM users WHERE authorised='0'";
         $result=mysqli_query($conn,$sql);
         $id=array();
         while ($ids = mysqli_fetch_assoc($result)) {
-            array_push($id,$ids);
+            array_push($id,$ids['ID']);
         }
         $idLength=count($id)
         $students=array();
@@ -100,7 +100,8 @@
             <h3>Classes:<button type="button" class="close" onclick="closeClasses()"><img class="c" src="images/Grey_close_x.svg.png" width="10" height="10"></button></h3>
             
             <?php
-            for ($i = 0; $i<$class_length; $i++) {
+    
+            for ($i=0;$i<$class_length;$i++) {
                 echo "
                     <a href='Class_Profile.php?class=$classes[$i]&name=$name'>
                         <button type='button' class='btn'>
