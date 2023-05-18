@@ -18,7 +18,7 @@
         $classed=mysqli_query($conn,$sql);
         $classes=array();
         while ($temp = mysqli_fetch_assoc($classed)) {
-            array_push($classes,$temp);
+            array_push($classes,$temp['course_name']);
         }
         $class_length=count($classes);
         $sql="SELECT course_ID FROM courses WHERE course_name='$class'";
@@ -27,7 +27,7 @@
         $result=mysqli_query($conn,$sql);
         $id=array();
         while ($ids = mysqli_fetch_assoc($result)) {
-            array_push($id,$ids);
+            array_push($id,$ids['user_ID']);
         }
         $idLength=count($id);
         $students=array();
