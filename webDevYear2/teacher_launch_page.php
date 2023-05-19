@@ -24,7 +24,7 @@
         $classed=mysqli_query($conn,$sql);
         $classes=array();
         while ($temp = mysqli_fetch_assoc($classed)) {
-            array_push($classes,$temp['course_name'])
+            array_push($classes,$temp['course_name']);
         }
         $class_length=count($classes);
         $sql="SELECT ID FROM users WHERE authorised='0'";
@@ -33,12 +33,12 @@
         while ($ids = mysqli_fetch_assoc($result)) {
             array_push($id,$ids['ID']);
         }
-        $idLength=count($id)
+        $idLength=count($id);
         $students=array();
         for ($i=0;$i<$idLength;$i++) {
-            $sql="SELECT firstname FROM users WHERE ID = '$id'";
+            $sql="SELECT firstname FROM users WHERE ID = '$id[$i]'";
             $studentFirstname=mysqli_query($conn,$sql);
-            $sql="SELECT lastname FROM users WHERE ID = '$id'";
+            $sql="SELECT lastname FROM users WHERE ID = '$id[$i]'";
             $studentLastname=mysqli_query($conn,$sql);
             $studentFirstnameResult=mysqli_fetch_assoc($studentFirstname);
             $studentLastnameResult=mysqli_fetch_assoc($studentLastname);
