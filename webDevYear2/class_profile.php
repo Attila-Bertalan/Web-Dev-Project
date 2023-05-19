@@ -38,7 +38,7 @@
             $studentLastname=mysqli_query($conn,$sql);
             $studentFirstnameResult=mysqli_fetch_assoc($studentFirstname);
             $studentLastnameResult=mysqli_fetch_assoc($studentLastname);
-            $studentFullname=$studentFirstnameResult('firstname')." ".$studentLastnameResult('lastname');
+            $studentFullname=$studentFirstnameResult['firstname']." ".$studentLastnameResult['lastname'];
             array_push($students,$studentFullname);
         }
     
