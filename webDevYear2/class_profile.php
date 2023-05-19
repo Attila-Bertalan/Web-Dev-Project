@@ -23,7 +23,8 @@
         $class_length=count($classes);
         $sql="SELECT course_ID FROM courses WHERE course_name='$class'";
         $classId=mysqli_query($conn,$sql);
-        $sql="SELECT user_ID FROM enrollment WHERE course_ID='$classId'";
+        $classIds=mysqli_fetch_assoc($classId);
+        $sql="SELECT user_ID FROM enrollment WHERE course_ID='$classIds['course_ID']'";
         $result=mysqli_query($conn,$sql);
         $id=array();
         while ($ids = mysqli_fetch_assoc($result)) {
